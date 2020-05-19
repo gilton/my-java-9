@@ -12,10 +12,16 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Acceleration {
 	
 	@Id
@@ -33,6 +39,7 @@ public class Acceleration {
 	private Challenge challenge;
 	
 	@Column(nullable = false, name = "created_at")
+	@Builder.Default
 	private LocalDate createdAt = LocalDate.now();
 	
 }
